@@ -5,7 +5,7 @@
       snowflake.className = 'snowflake';
       snowflake.textContent = '❄';
       snowflake.style.left = Math.random() * 100 + 'vw';
-      snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+      snowflake.style.animationDuration = Math.random() * 8 + 7 + 's'; // 7-15 soniya oralig'ida
       snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
       snowContainer.appendChild(snowflake);
     }

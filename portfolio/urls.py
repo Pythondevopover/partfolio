@@ -34,5 +34,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
 ]
-if settings.DEBUG is False:  # Faqat DEBUG = False rejimida ishlaydi
+if settings.DEBUG is True:  # Faqat DEBUG = False rejimida ishlaydi
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

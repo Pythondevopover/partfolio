@@ -33,4 +33,6 @@ urlpatterns = [
     path('prizes/', include('prizes.urls')),  # Prizelar
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
-] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+]
+if settings.DEBUG is False:  # Faqat DEBUG = False rejimida ishlaydi
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

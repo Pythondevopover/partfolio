@@ -19,7 +19,12 @@ from django.urls import path, include
 from .views import home
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import render
 
+def custom_page_not_found(request, exception):
+    return render(request, "404.html", status=404)
+
+handler404 = custom_page_not_found
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),  # Bosh sahifa
@@ -28,6 +33,4 @@ urlpatterns = [
     path('prizes/', include('prizes.urls')),  # Prizelar
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

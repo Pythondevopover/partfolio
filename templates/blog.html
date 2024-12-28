@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Blog  </title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>
+                Bloglarim
+            </h1>
+        </header>
+        <main>
+            <div>
+                {% for post in posts %}
+                    <div>
+                        <a href="/blog/{{ post.id }}/">
+                            <h2 style="text-align: center;">{{ post.title }}</h2>
+                        </a>
+                        <p style="color: blue; text-align: center;">{{ post.content|truncatewords:20 }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </body>
+</html>
+{% endblock %}

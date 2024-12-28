@@ -1,0 +1,12 @@
+h1 {
+    color: rgb(0, 30, 255);
+    font-size: 2.5em;
+    margin: 0;
+    animation: glow 1.5s infinite;
+}
+.cn {
+    display: flex;
+    justify-content: center; /* Gorizontal markazlash */
+    align-items: center;    /* Vertikal markazlash */
+    height: 100%;           /* Qulaylik uchun konteyner balandligi */
+}

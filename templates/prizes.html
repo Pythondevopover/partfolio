@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Prizes </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/prizes.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Prizes</h1>
+        </header>
+        <main>
+            {% for prize in prizess %}
+                <div class="cn">
+                    <img src="{{ prize.photo.url }}" style="width: 600px; height: auto;">
+                </div>    
+                <h1 style="text-align: center;"> {{ prize.description }} </h1>
+                <h2 style="text-align: right;"> {{ prize.awarded_on }}</h2>
+            {% endfor %}
+        </main>
+    </body>
+</html>
+{% endblock %}

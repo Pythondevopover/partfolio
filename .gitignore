@@ -1,0 +1,4 @@
+dp.sqlite3
+__pycache__
+.env
+venv

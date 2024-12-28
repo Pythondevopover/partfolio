@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank</title>
+    <link rel="stylesheet" href="{% static 'css/rank.css' %}">
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; color: red;">My Rankings</h1>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            {% for rank in ranks %}
+                <div class="mySlides">
+                    <img src="{{ rank.photo.url }}" alt="Rasm {{ rank.score }}" style="width: 600px; height: auto;">
+                    <h1 style="text-align: center;">
+                        {{ rank.site_name }} - Rating: {{ rank.rank }}
+                    </h1>
+                    
+                    <h2 style="text-align: center;">
+                        {{ rank.rank_name }} - <a href="{{ rank.profil_url }}">{{ rank.profil }}</a>
+                    </h2>
+                    
+                </div>
+            {% endfor %}
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>        
+    </main>
+    <footer style="text-align: center; margin-top: 20px;">
+        <a href="/">Home</a>
+    </footer>
+    <script src="{% static 'js/rank.js' %}"></script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Blog  </title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <main>
+            <h1 style="text-align: center;">{{ post.title }}</h1>
+            <div class="cn">
+                <img src="{{ post.photo.url }}" alt="Post Image">
+            </div>
+            <h2 style="text-align: center; color: blue"> {{ post.content }} </h1>
+
+            <a href="/blog/">Back to Blogs</a>
+        </main>
+    </body>
+</html>
+
+{% endblock %}

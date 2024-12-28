@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rank</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+        <div class="contact-us">
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">Ism:</label>
+                <input type="text" id="name" name="name" placeholder="Ismingizni kiriting">
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Emailingizni kiriting">
+        
+                <label for="phone">Telefon raqami:</label>
+                <input type="text" id="phone" name="phone" placeholder="Telefon raqamingiz (ixtiyoriy)">
+        
+                <label for="message">Xabar:</label>
+                <textarea id="message" name="message" placeholder="Savolingizni yozing"></textarea>
+        
+                <button type="submit">Yuborish</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+{% endblock %}

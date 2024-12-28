@@ -20,7 +20,7 @@ body {
     font-size: 1em;
     color: white;
     opacity: 0.8;
-    animation: fall 5s linear infinite;
+    animation: fall 15s linear infinite;
   }
   
   @keyframes fall {

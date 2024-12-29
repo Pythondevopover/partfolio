@@ -79,7 +79,7 @@ footer a {
 }
 footer a img {
     vertical-align: middle; /* Tasvirni matnga mos tekislang */
-    top: 0; /* Pastga tushirish */
+    top: 5px; /* Pastga tushirish */
     width: 25px; /* Tasvir o'lchamini sozlash */
     height: 25px;
 }

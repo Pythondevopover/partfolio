@@ -78,10 +78,11 @@ footer a {
     margin: 0 10px;
 }
 footer a img {
-    vertical-align: middle; /* Buni tekshirib ko'ring */
-    margin-top: 5px; /* Yoki logotipni pastga tushirish uchun qiymatini sozlang */
-    position: relative; /* Logotip joylashuvini aniqlash uchun */
-    top: 5px;
+    vertical-align: middle; /* Tasvirni matnga mos tekislang */
+    position: relative; /* Logotipni joylashtirish uchun */
+    top: 0; /* Pastga tushirish */
+    width: 25px; /* Tasvir o'lchamini sozlash */
+    height: 25px;
 }
 footer a:hover {
     color: #ff4d4d;

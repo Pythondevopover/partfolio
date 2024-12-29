@@ -77,7 +77,12 @@ footer a {
     color: red;
     margin: 0 10px;
 }
-
+footer a img {
+    vertical-align: middle; /* Buni tekshirib ko'ring */
+    margin-top: 5px; /* Yoki logotipni pastga tushirish uchun qiymatini sozlang */
+    position: relative; /* Logotip joylashuvini aniqlash uchun */
+    top: 5px;
+}
 footer a:hover {
     color: #ff4d4d;
 }

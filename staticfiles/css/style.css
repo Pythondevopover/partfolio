@@ -77,7 +77,13 @@ footer a {
     color: red;
     margin: 0 10px;
 }
-
+footer a img {
+    vertical-align: middle; /* Tasvirni matnga mos tekislang */
+    top: 0; /* Pastga tushirish */
+    width: 25px; /* Tasvir o'lchamini sozlash */
+    height: 25px;
+    margin-left: 10px;
+}
 footer a:hover {
     color: #ff4d4d;
 }

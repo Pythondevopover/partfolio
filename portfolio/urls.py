@@ -21,10 +21,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import render
 
-def custom_page_not_found(request, exception):
-    return render(request, "404.html", status=404)
-
-handler404 = custom_page_not_found
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),  # Bosh sahifa
@@ -34,3 +30,11 @@ urlpatterns = [
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+from django.conf.urls import handler404
+from about.views import custom_404
+from blog.views import custom_404
+from contact.views import custom_404
+from prizes.views import custom_404
+from rank.views import custom_404
+
+handler404 = custom_404

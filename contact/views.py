@@ -17,3 +17,5 @@ def contact_view(request):
         'telegram_link': 'https://t.me/Python_devopover',  # Telegram havolasi
     }
     return render(request, 'contact_us.html', context)
+def custom_404(request, exception):
+    return render(request, '404.html', {}, status=404)

@@ -2,10 +2,9 @@ from django.urls import path
 from .views import about
 from django.shortcuts import render
 
-def custom_page_not_found(request, exception):
-    return render(request, "404.html", status=404)
+from django.http import HttpResponseNotFound
+from django.shortcuts import render
 
-handler404 = custom_page_not_found
 urlpatterns = [
     path('', about, name='about'),  # Bosh sahifa yoki About sahifasi
 ]

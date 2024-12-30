@@ -38,3 +38,6 @@ from prizes.views import custom_404
 from rank.views import custom_404
 
 handler404 = custom_404
+def f404(request):
+    if request not in urlpatterns:
+        return render(request, '404.html')

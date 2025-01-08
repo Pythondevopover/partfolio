@@ -29,7 +29,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
 ]
-if True == settings.DEBUG:
+if False == settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 from django.conf.urls import handler404

@@ -20,7 +20,6 @@ from .views import home
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import render
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),  # Bosh sahifa
@@ -29,7 +28,10 @@ urlpatterns = [
     path('prizes/', include('prizes.urls')),  # Prizelar
     path('', home, name='home'),
     path('contact/', include('contact.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+if True == settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 from django.conf.urls import handler404
 from about.views import custom_404
 from blog.views import custom_404
